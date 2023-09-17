@@ -94,7 +94,14 @@ a:hover {
     margin:40px;
 }
 .EsqueletoJuego img {
+
     width: 300px;
     height: 300px;
     margin:15px;
+}
+@media screen and (max-width: 767px){
+    .EsqueletoJuego {
+        display: flex;
+        flex-wrap: wrap;
+    }
 }
