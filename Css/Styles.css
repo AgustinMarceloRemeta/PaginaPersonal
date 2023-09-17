@@ -99,9 +99,11 @@ a:hover {
     height: 300px;
     margin:15px;
 }
+
+
 @media screen and (max-width: 767px){
     .EsqueletoJuego {
         display: flex;
-        flex-wrap: wrap;
+        flex-direction:column;
     }
 }
