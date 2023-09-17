@@ -1,6 +1,7 @@
 body {
     margin: 0 auto;
     background: repeating-linear-gradient(134deg,#FFFFFF,#4B0082);
+    background-size:200%;
 }
 
 header a {
@@ -135,8 +136,5 @@ a:hover {
     }
     #Contacto p {
         margin-left: 10%;
-    }
-    body {
-       width:110%;
     }
 }
