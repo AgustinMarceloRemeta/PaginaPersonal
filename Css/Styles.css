@@ -31,12 +31,14 @@ header img{
 }
 
 #botons {
-    margin-left:45%;
     display:flex;
+    position:fixed;
+    right:5%;
 }
     #botons a {
         margin-right: 10px;
         text-decoration:none;
+        text-align:right;
     }
 a:hover { 
     color: rgb(209 23 217);
