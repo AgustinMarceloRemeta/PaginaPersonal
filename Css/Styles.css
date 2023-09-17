@@ -133,4 +133,10 @@ a:hover {
         display: flex;
         margin-top: -30px;
     }
+    #Contacto p {
+        margin-left: 10%;
+    }
+    body {
+       width:110%;
+    }
 }
