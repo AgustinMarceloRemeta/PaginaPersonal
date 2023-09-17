@@ -1,6 +1,14 @@
-body{
-    margin:0 auto;
-    background-color:rgb(225 225 225);
+body {
+    margin: 0 auto;
+    background: repeating-linear-gradient(134deg,#FFFFFF,#4B0082);
+}
+
+header a {
+    color: #FFFFFF;
+}
+
+a{
+    color:red;
 }
 
 header {
@@ -8,10 +16,10 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgb(152 207 14);
+    background-color: #003366;
     display: flex;
-    border-bottom-left-radius:10px;
-    border-bottom-right-radius:10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 header img{
@@ -36,6 +44,9 @@ a:hover {
 
 .seccion h2, h3 {
     text-align: center;
+}
+.seccion h2 {
+    border-top: 1px solid black;
 }
 
 #Sobremi{
@@ -70,7 +81,7 @@ a:hover {
 }
 
 #Juegos{
-    background-color:white;
+
 }
 
 
