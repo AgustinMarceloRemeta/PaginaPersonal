@@ -130,6 +130,11 @@ a:hover {
 #PieDePagina a{
     color:white;
 }
+#PieDePagina img{
+width:20px;
+height:20px;
+margin:3px;
+}
 
 
 @media screen and (max-width: 1000px){
