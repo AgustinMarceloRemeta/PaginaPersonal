@@ -1,7 +1,9 @@
 body {
-    margin: 0 auto;
+    margin: 0;
     background: repeating-linear-gradient(134deg,#FFFFFF,#4B0082);
-    background-size:200%;
+    background-size: 200%;
+    background-attachment: fixed; /* Esto hace que el fondo sea fijo */
+    background-repeat: no-repeat;
 }
 
 header a {
@@ -113,16 +115,21 @@ a:hover {
     height: 300px;
     margin:15px;
 }
-#Contacto{
-    display:flex;
-}
-#Contacto p{
-    margin-left:15%;
-}
-#Contacto a{
-    color:black;
-}
 
+#PieDePagina {
+    position: fixed;
+    bottom: 0;
+    background-color: #003366;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+#PieDePagina p{
+    margin: 5px 100px 5px 0px;
+}
+#PieDePagina a{
+    color:white;
+}
 
 
 @media screen and (max-width: 1000px){
@@ -133,8 +140,5 @@ a:hover {
     #Conocimientos {
         display: flex;
         margin-top: -30px;
-    }
-    #Contacto p {
-        margin-left: 10%;
     }
 }
