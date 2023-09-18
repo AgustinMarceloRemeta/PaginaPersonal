@@ -2,7 +2,7 @@ body {
     margin: 0;
     background: repeating-linear-gradient(134deg,#FFFFFF,#4B0082);
     background-size: 200%;
-    background-attachment: fixed; /* Esto hace que el fondo sea fijo */
+    background-attachment: fixed;
     background-repeat: no-repeat;
 }
 
@@ -85,11 +85,6 @@ a:hover {
     margin-left: 30px;
 }
 
-#Juegos{
-
-}
-
-
 .EsqueletoJuego {
     display: flex;
     width: 50%;
@@ -127,9 +122,10 @@ a:hover {
 #PieDePagina p{
     margin: 5px 100px 5px 0px;
 }
-#PieDePagina a{
-    color:white;
-}
+    #PieDePagina a {
+        color: white;
+        text-decoration: none;
+    }
 #PieDePagina img{
 width:20px;
 height:20px;
@@ -139,9 +135,10 @@ margin:3px;
     margin-top: -20px;
     margin-left: 10px;
 }
-.Ref a{
-    margin-top:5px;
-}
+    .Ref a {
+        margin-top: 5px;
+        text-decoration: none;
+    }
 .Ref p {
         text-align: center;
         margin-top: -15px;
