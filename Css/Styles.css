@@ -1,178 +1,166 @@
 body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
     margin: 0;
-    background: repeating-linear-gradient(134deg,#FFFFFF,#4B0082);
-    background-size: 200%;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+    padding: 0;
 }
 
-header a {
-    color: #FFFFFF;
-}
-
-a{
-    color:red;
+#contenedor {
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+     margin-bottom: 60px;
 }
 
 header {
+    background: #333;
+    color: #fff;
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom: #0779e4 3px solid;
     position: fixed;
+    width: 100%;
     top: 0;
     left: 0;
-    width: 100%;
-    background-color: #003366;
-    display: flex;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    z-index: 1000;
 }
 
-header img{
-    width:40px;
-    height:40px;
-    margin-top:20px;
-    margin-right:15px;
-    margin-left:15px;
+header img {
+    float: left;
+    width: 50px;
+    height: 50px;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+header h2 {
+    float: left;
 }
 
 #botons {
-    display:flex;
-    position:fixed;
-    right:5%;
+    float: right;
+    margin-top: 10px;
 }
-    #botons a {
-        margin-right: 10px;
-        text-decoration:none;
-        text-align:right;
-    }
-a:hover { 
-    color: rgb(209 23 217);
-    }
 
-.seccion h2, h3 {
+#botons a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 20px;
+    font-size: 18px;
     text-align: center;
 }
+
+#botons a:hover {
+    background: #0779e4;
+    color: #fff;
+    border-radius: 5px;
+}
+
+#Datos,
+#Juegos,
+#Referencias {
+    margin: 20px 0;
+    padding-top: 100px; /* Add padding to avoid overlap with fixed header */
+}
+
+#Datos img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 10px;
+}
+
+#Datos #QuienSoy,
+#Datos #MasDatos,
+#Datos #Conocimientos {
+    margin: 10px 0;
+}
+
+#Datos #Conocimientos ul {
+    list-style: none;
+    padding: 0;
+}
+
+#Datos #Conocimientos ul li {
+    background: #333;
+    color: #fff;
+    padding: 5px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+.seccion {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px #ccc;
+}
+
 .seccion h2 {
-    border-top: 1px solid black;
+    color: #333;
+    margin-bottom: 10px;
 }
 
-#Sobremi{
-    margin-top:66px;
-}
-#Datos {
+.JuegosMasVideo {
     display: flex;
-    margin-top: -20px;
-    flex-wrap: wrap;
-}
-#Sobremi img {
-    width: 120px;
-    height:160px;
-    border-radius: 100px;
-    margin-left: 50px;
-}
-#MasDatos {
-    margin-left: 20px;
-}
-
-#Conocimientos {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: -30px;
-}
-#items {
-    display: flex;
-}
-#QuienSoy {
-    width: 70%;
-    margin-left: 30px;
+    flex-direction: column;
+    align-items: center; /* Center align items horizontally */
 }
 
 .EsqueletoJuego {
     display: flex;
-    width: 50%;
+    align-items: center;
+    width: 90%; /* Limit width of the video container */
 }
-.TextoySaberMas {
-    display: flex;
-    flex-wrap: wrap;
-}
-    .TextoySaberMas a {
-        text-decoration: none;
-        text-align:end;
-        font-size:20px;
-    }
-.JuegosMasVideo{
-    display:flex;
-}
-.EsqueletoJuego p{
-    margin:40px;
-}
+
 .EsqueletoJuego img {
-
-    width: 300px;
-    height: 300px;
-    margin:15px;
+    width: 200px;
+    height: 150px;
+    margin-right: 20px;
+    border-radius: 10px;
 }
 
-#PieDePagina {
+.TextoySaberMas {
+    flex: 1;
+}
+
+.TextoySaberMas p {
+    margin-bottom: 10px;
+}
+
+.SaberMas a {
+    color: #0779e4;
+    text-decoration: none;
+}
+
+.SaberMas a:hover {
+    text-decoration: underline;
+}
+
+iframe {
+    width: 90%; /* Limit the width of the iframe */
+    max-width: 800px; /* Optional: Set a maximum width */
+    aspect-ratio: 16 / 9;
+    margin: 20px 0;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+    width: 100%;
     position: fixed;
     bottom: 0;
-    background-color: #003366;
-    width: 100%;
-    display: flex;
+    left: 0;
+     display: flex;
     justify-content: center;
 }
-#PieDePagina p{
-    margin: 5px 100px 5px 0px;
-}
-    #PieDePagina a {
-        color: white;
-        text-decoration: none;
-    }
-#PieDePagina img{
+
+footer img{
 width:20px;
 height:20px;
 margin:3px;
-}
-.Ref {
-    margin-top: -20px;
-    margin-left: 10px;
-}
-    .Ref a {
-        margin-top: 5px;
-        text-decoration: none;
-    }
-.Ref p {
-        text-align: center;
-        margin-top: -15px;
-    }
-#Referencias{
-    margin-bottom:20px;
-}
-
-#Referencias h2{
-    margin-bottom: 40px;
-}
-
-#Referencias h4{
-    text-align:center;
-}
-
-#Referencias p{
-    margin-left: 10px;
-    margin-bottom:40px;
-    text-align:center;
-}
-
-
-@media screen and (max-width: 1000px){
-    .EsqueletoJuego {
-        display: flex;
-        flex-direction:column;
-    }
-    #Conocimientos {
-        display: flex;
-        margin-top: -30px;
-    }
-
-    #PieDePagina p {
-        margin: 5px 20px 5px 0px;
-    }
+    margin-top: 17px;
 }
