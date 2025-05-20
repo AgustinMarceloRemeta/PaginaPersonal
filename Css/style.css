@@ -1,21 +1,26 @@
-body {
+html, body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
     background-color: #f4f4f4;
+    overflow-x: hidden; /* Mantener esto para prevenir desbordamiento */
     color: #1e1e1e;
+    width: 100%; /* Asegurar que el cuerpo ocupe solo el 100% del ancho */
+    max-width: 100%; /* Importante para evitar desbordamiento */
 }
 
 .hero {
     background-color: #0b001b;
     color: white;
-    padding: 30rem 15rem 30rem;
+    padding: 3rem 1rem; /* Padding realista */
     position: relative;
     overflow: hidden;
-     height: 100vh;            
+    height: 100vh;            
     display: flex;             
     align-items: center;       
+    margin: 0 auto;
+    width: 100%; /* Asegurar que el hero se ajuste al ancho disponible */
+    box-sizing: border-box; /* Incluir padding y borde en el ancho total */
 }
-
 .hero-content {
     display: flex;
     flex-wrap: wrap;
@@ -179,33 +184,34 @@ main {
     }
     .hero {
         text-align: center;
-        padding: 2rem 1rem 6rem;
+        padding: 2rem 1rem; /* Padding reducido para móviles */
+        width: 100%;
+        box-sizing: border-box;
     }
-
     .hero-content {
         flex-direction: column;
         align-items: center;
+        width: 100%;
     }
-
     .hero-content .text {
         flex: none;
+        width: 100%;
     }
-
     .links {
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
         align-items: center;
+        width: 100%;
     }
-
     .links a {
         margin: 0;
         width: 100%;
         max-width: 200px;
     }
-
     .hero-img {
         margin-top: 2rem;
         width: 180px;
     }
+}
 }
