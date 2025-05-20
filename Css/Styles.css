@@ -215,7 +215,7 @@ main {
         flex-wrap: wrap;
         justify-content: center;
         gap: 0.1rem;
-                margin-top: -5px;
+                margin-top: -20px;
 
     }
 
@@ -228,9 +228,12 @@ main {
     border-radius: 5px;
     transition: background 0.3s;
     display: inline-block;
-    margin-bottom: 0.5rem;
-            margin-top: -15px;
+    margin-bottom: 0.25rem;
+            margin: 4px;
+                    max-width: 30px;
+                    max-height: 9px;
 
+        font-size:5px;
 
     }
  
