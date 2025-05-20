@@ -173,3 +173,19 @@ main {
 .featured-text a:hover {
     background: #2d2d2d;
 }
+@media (max-width: 768px) {
+    .featured-content {
+        flex-direction: column; /* Apila los elementos en móvil */
+    }
+    
+    .featured-img {
+        flex: none;
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto 1rem auto; /* Centra la imagen y añade espacio abajo */
+    }
+    
+    .featured-text {
+        width: 100%;
+        padding: 0 1rem; /* Añade algo de padding en los laterales */
+    }
