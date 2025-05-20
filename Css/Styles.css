@@ -11,9 +11,9 @@ body {
         padding: 30rem 15rem 30rem;
     position: relative;
     overflow: hidden;
-    height: 100vh;
     display: flex;
     align-items: center;
+
 }
 
 .hero-content {
@@ -23,6 +23,7 @@ body {
     justify-content: space-between;
     max-width: 1200px;
     margin: 0 auto;
+
 }
 
 .hero-content .text {
@@ -174,27 +175,65 @@ main {
     background: #2d2d2d;
 }
 @media (max-width: 768px) {
-      .hero {
-        padding: 6rem 1rem;
-        flex-direction: column;
-        height: auto;
+ .hero {
+        padding: 4rem 1.5rem 5rem; /* Reducido pero manteniendo espacio suficiente */
         text-align: center;
+        height: auto;
     }
 
     .hero-content {
-        flex-direction: column;
+        flex-direction: column-reverse; /* Imagen primero, luego texto */
         align-items: center;
         text-align: center;
+        margin-top: 350px;
+
     }
 
-    .hero-content .text {
-        width: 100%;
+     
+      .hero-content h1 {
+        font-size: 1.1rem; /* Tamaño legible en móvil */
+        margin-top: -5px;
+    }
+
+    .hero-content p {
+        font-size: .3rem; /* Tamaño legible */
+        max-width: 100%; /* ocupa el ancho completo */
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: -15px;
+
     }
 
     .hero-img {
-        margin-top: 2rem;
+        margin-bottom: .1rem;
+        width: 30px;
+        height: 30px;
     }
 
+    .links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.1rem;
+                margin-top: -5px;
+
+    }
+
+    .links a {
+            color: white;
+    text-decoration: none;
+    margin-right: 15px;
+    border: 1px solid white;
+    padding: 0.001rem .004rem;
+    border-radius: 5px;
+    transition: background 0.3s;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+            margin-top: -15px;
+
+
+    }
+ 
     .curve {
         height: 40px;
     }
