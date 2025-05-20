@@ -145,9 +145,12 @@ main {
 
 .featured-img {
     flex: 1 1 400px;
-    max-width: 500px;
+    max-width: 100%; /* Cambiado de 500px a 100% */
+    width: 100%; /* Asegura que la imagen no exceda su contenedor */
+    height: auto; /* Mantiene la proporción de aspecto */
     border-radius: 15px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    object-fit: contain; /* Asegura que la imagen se ajuste dentro de sus dimensiones */
 }
 
 .featured-text {
@@ -213,5 +216,19 @@ main {
         margin-top: 2rem;
         width: 180px;
     }
-}
+        .featured-content {
+        flex-direction: column; /* Apila los elementos en móvil */
+    }
+    
+    .featured-img {
+        flex: none;
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto 1rem auto; /* Centra la imagen y añade espacio abajo */
+    }
+    
+    .featured-text {
+        width: 100%;
+        padding: 0 1rem; /* Añade algo de padding en los laterales */
+    }
 }
