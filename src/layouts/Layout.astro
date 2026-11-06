@@ -1,0 +1,68 @@
+---
+import { SEO } from "astro-seo";
+import { ClientRouter } from "astro:transitions";
+import { useTranslations } from "@/i18n/utils";
+import { withBase } from "@/lib/utils";
+import "@/styles/globals.css";
+
+interface Props {
+  title?: string;
+  lang?: "es" | "en";
+}
+
+const { title = "Agustín Remeta", lang = "es" } = Astro.props;
+const t = useTranslations(lang);
+const description = t("seo.description");
+const currentUrl = new URL(Astro.url.pathname, Astro.site).toString();
+const esUrl = new URL(withBase("/"), Astro.site).toString();
+const enUrl = new URL(withBase("/en/"), Astro.site).toString();
+const locale = lang === "es" ? "es_ES" : "en_US";
+const shareImage = new URL(withBase("/images/profile.jpg"), Astro.site).toString();
+---
+
+<!doctype html>
+<html lang={lang} class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href={withBase("/favicon.ico")} />
+    <meta name="generator" content={Astro.generator} />
+    <ClientRouter />
+    <SEO
+      title={title}
+      description={description}
+      canonical={currentUrl}
+      openGraph={{
+        basic: {
+          title: `${title} | Game Development`,
+          type: "website",
+          image: shareImage,
+          url: currentUrl,
+        },
+        image: {
+          alt: "Agustín Remeta",
+        },
+        optional: {
+          siteName: "Agustín Remeta",
+          locale: locale,
+        },
+      }}
+      extend={{
+        meta: [
+          { name: "theme-color", content: "#000000" },
+          { name: "author", content: "Agustín Remeta" },
+          { name: "robots", content: "index, follow" },
+        ],
+        link: [
+          { rel: "apple-touch-icon", href: withBase("/apple-icon-180x180.png") },
+          { rel: "alternate", hreflang: "es", href: esUrl },
+          { rel: "alternate", hreflang: "en", href: enUrl },
+          { rel: "alternate", hreflang: "x-default", href: esUrl },
+        ],
+      }}
+    />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

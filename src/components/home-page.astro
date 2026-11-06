@@ -1,0 +1,90 @@
+---
+import { Footer } from "@/components/footer";
+import { GameCard } from "@/components/game-card";
+import { Navbar } from "@/components/navbar";
+import { useTranslations } from "@/i18n/utils";
+import { featuredGame, games } from "@/lib/games";
+import { withBase } from "@/lib/utils";
+import { Gamepad2, Star } from "lucide-react";
+import type { ui } from "@/i18n/ui";
+import Layout from "@/layouts/Layout.astro";
+
+interface Props {
+  lang: keyof typeof ui;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<Layout title="Agustín Remeta" lang={lang}>
+  <div class="relative min-h-screen flex flex-col bg-background">
+    <Navbar lang={lang} client:load />
+
+    <main class="flex-1">
+      <section
+        class="relative min-h-[calc(100vh-4rem)] flex items-center justify-center text-center px-4 py-8 overflow-hidden"
+      >
+        <div class="relative z-10 flex flex-col items-center gap-6 max-w-2xl">
+          <img
+            src={withBase("/images/profile.jpg")}
+            alt={t("hero.name")}
+            class="h-44 w-44 md:h-56 md:w-56 rounded-full object-cover border-2 border-primary/30 pointer-events-none drop-shadow-[0_0_35px_rgba(255,255,255,0.15)]"
+          />
+          <h1 class="text-4xl md:text-6xl font-bold tracking-tight">{t("hero.name")}</h1>
+          <p class="text-base md:text-lg text-muted-foreground leading-relaxed">
+            {t("hero.description")}
+          </p>
+        </div>
+      </section>
+
+      <section class="py-24 px-4 bg-card z-10" id="featured">
+        <div class="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-12 2xl:px-16">
+          <div class="flex items-center gap-3 mb-12">
+            <Star className="w-8 h-8 text-primary" />
+            <h2 class="text-4xl font-bold tracking-tight">{t("featured.title")}</h2>
+          </div>
+          <div class="grid md:grid-cols-2 gap-8 items-center">
+            <img
+              src={withBase(featuredGame.image)}
+              alt={featuredGame.title}
+              loading="lazy"
+              decoding="async"
+              class="w-full rounded-lg border border-border/60 object-cover aspect-video shadow-lg"
+            />
+            <div class="space-y-6">
+              <h3 class="text-3xl font-bold tracking-tight">{t(featuredGame.titleKey)}</h3>
+              <p class="text-muted-foreground leading-relaxed">
+                {t(featuredGame.descriptionKey)}
+              </p>
+              <iframe
+                frameborder="0"
+                src={featuredGame.itchEmbed}
+                width="552"
+                height="167"
+                class="max-w-full"
+                title={featuredGame.title}
+              >
+                <a href={featuredGame.link}>{featuredGame.title} by Crestfallen Game Studio</a>
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-24 px-4 bg-background" id="games">
+        <div class="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-12 2xl:px-16">
+          <div class="flex items-center gap-3 mb-12">
+            <Gamepad2 className="w-8 h-8 text-primary" />
+            <h2 class="text-4xl font-bold tracking-tight">{t("games.title")}</h2>
+          </div>
+          <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
+            {games.map((game) => <GameCard game={game} lang={lang} />)}
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <Footer lang={lang} />
+  </div>
+</Layout>
