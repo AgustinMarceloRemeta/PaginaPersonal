@@ -31,6 +31,11 @@ export function Footer({ lang }: { lang: keyof typeof ui }) {
                   {t("games.title")}
                 </a>
               </li>
+              <li>
+                <a href={`${homePrefix}#academic`} className="text-muted-foreground hover:text-foreground hover:underline decoration-primary underline-offset-4 transition-colors">
+                  {t("academic.title")}
+                </a>
+              </li>
             </ul>
           </div>
           <div>

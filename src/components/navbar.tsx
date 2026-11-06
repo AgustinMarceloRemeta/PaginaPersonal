@@ -35,6 +35,7 @@ export function Navbar({ lang }: NavbarProps) {
     { name: t("nav.home"), href: homeRoute },
     { name: t("nav.featured"), href: "#featured" },
     { name: t("nav.games"), href: "#games" },
+    { name: t("nav.academic"), href: "#academic" },
   ];
 
   return (

@@ -29,6 +29,17 @@ const games: Game[] = [
     link: "https://play.google.com/store/apps/details?id=com.Remarkade.ColorSeek",
   },
   {
+    title: "Root Access",
+    descriptionKey: "games.rootaccess.description",
+    image: "/images/games/root-access.jpg",
+    platformKey: "games.platform.itch",
+    linkLabelKey: "games.store.itch",
+    link: "https://phyglitch.itch.io/rootaccess",
+  },
+];
+
+const academicGames: Game[] = [
+  {
     title: "Pesadilla Eterna",
     descriptionKey: "games.pesadilla.description",
     image: "/images/games/pesadilla-eterna.png",
@@ -37,20 +48,44 @@ const games: Game[] = [
     link: "https://crunched-studios.itch.io/pesadilla-eterna",
   },
   {
-    title: "Root Access",
-    descriptionKey: "games.rootaccess.description",
-    image: "/images/games/root-access.jpg",
-    platformKey: "games.platform.itch",
-    linkLabelKey: "games.store.itch",
-    link: "https://phyglitch.itch.io/rootaccess",
-  },
-  {
     title: "Betweenplanets",
     descriptionKey: "games.betweenplanets.description",
     image: "/images/games/betweenplanets.jpg",
     platformKey: "games.platform.itch",
     linkLabelKey: "games.store.itch",
     link: "https://remetaagustin.itch.io/betweenplanets",
+  },
+  {
+    title: "Space Game",
+    descriptionKey: "games.spacegame.description",
+    image: "/images/games/Space Game.png",
+    platformKey: "games.platform.itch",
+    linkLabelKey: "games.store.itch",
+    link: "https://remetaagustin.itch.io/space-game",
+  },
+  {
+    title: "Rocket Attack",
+    descriptionKey: "games.rocketattack.description",
+    image: "/images/games/RocketAttackpng.png",
+    platformKey: "games.platform.itch",
+    linkLabelKey: "games.store.itch",
+    link: "https://remetaagustin.itch.io/rocket-attack",
+  },
+  {
+    title: "Little Tour",
+    descriptionKey: "games.littletour.description",
+    image: "/images/games/LittleTourpng.png",
+    platformKey: "games.platform.itch",
+    linkLabelKey: "games.store.itch",
+    link: "https://remetaagustin.itch.io/little-tour",
+  },
+  {
+    title: "Travesía Ratonezca",
+    descriptionKey: "games.travesia.description",
+    image: "/images/games/TravesiaRatonezca.png",
+    platformKey: "games.platform.itch",
+    linkLabelKey: "games.store.itch",
+    link: "https://remetaagustin.itch.io/travesa-ratonezca",
   },
 ];
 
@@ -67,5 +102,5 @@ const featuredGame = {
   studioLogo: "/images/cf.png",
 } as const;
 
-export { games, featuredGame };
+export { games, academicGames, featuredGame };
 export type { Game };
