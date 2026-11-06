@@ -1,4 +1,5 @@
 import { SiGithub, SiInstagram, SiYoutube } from "@icons-pack/react-simple-icons";
+import { FaLinkedin } from "react-icons/fa6";
 import React from "react";
 
 interface Social {
@@ -12,6 +13,11 @@ const socials: Social[] = [
     name: "GitHub",
     icon: SiGithub,
     href: "https://github.com/AgustinMarceloRemeta",
+  },
+  {
+    name: "LinkedIn",
+    icon: FaLinkedin,
+    href: "https://www.linkedin.com/in/agustin-remeta-a365b7248/",
   },
   {
     name: "Instagram",
