@@ -2,6 +2,7 @@
 import { Footer } from "@/components/footer";
 import { GameCard } from "@/components/game-card";
 import { Navbar } from "@/components/navbar";
+import { TrailerPlayer } from "@/components/trailer-player";
 import { useTranslations } from "@/i18n/utils";
 import { academicGames, featuredGame, games } from "@/lib/games";
 import { withBase } from "@/lib/utils";
@@ -101,6 +102,14 @@ const t = useTranslations(lang);
                     {t(featuredGame.studioLabelKey)} →
                   </span>
                 </a>
+                {featuredGame.trailerEmbed && (
+                  <TrailerPlayer
+                    trailerEmbed={featuredGame.trailerEmbed}
+                    title={featuredGame.title}
+                    lang={lang}
+                    client:load
+                  />
+                )}
               </div>
             </div>
           </div>
@@ -113,8 +122,8 @@ const t = useTranslations(lang);
             <Gamepad2 className="w-8 h-8 text-primary" />
             <h2 class="text-4xl font-bold tracking-tight">{t("games.title")}</h2>
           </div>
-          <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
-            {games.map((game) => <GameCard game={game} lang={lang} />)}
+          <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-8 items-start">
+            {games.map((game) => <GameCard game={game} lang={lang} client:load />)}
           </div>
         </div>
       </section>
@@ -127,8 +136,10 @@ const t = useTranslations(lang);
               {t("academic.title")}
             </h2>
           </div>
-          <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-4 max-w-6xl">
-            {academicGames.map((game) => <GameCard game={game} lang={lang} compact />)}
+          <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-4 max-w-6xl items-start">
+            {academicGames.map((game) => (
+              <GameCard game={game} lang={lang} compact client:load />
+            ))}
           </div>
         </div>
       </section>
@@ -136,4 +147,50 @@ const t = useTranslations(lang);
 
     <Footer lang={lang} />
   </div>
+
+  <script is:inline data-astro-rerun>
+    if (!window.__trailerDelegationRegistered) {
+      window.__trailerDelegationRegistered = true;
+      document.addEventListener("click", (event) => {
+        const target = event.target instanceof Element ? event.target : null;
+        if (!target) return;
+        const button = target.closest("button[data-trailer-embed]");
+        if (!button) return;
+        const island = button.closest("astro-island");
+        if (island && !island.hasAttribute("ssr")) return;
+
+        const wrapper = button.closest("[data-trailer-wrapper]");
+        if (!wrapper) return;
+
+        const existing = wrapper.querySelector("[data-fallback-trailer]");
+        const labelEl = button.querySelector("[data-trailer-label]");
+        if (existing) {
+          existing.remove();
+          if (labelEl) {
+            labelEl.textContent = button.getAttribute("data-label-watch") || "Ver Tráiler";
+          }
+          return;
+        }
+
+        const container = document.createElement("div");
+        container.setAttribute("data-fallback-trailer", "true");
+        container.className =
+          "w-full aspect-video rounded-lg overflow-hidden border border-primary/40 mt-3 bg-black";
+
+        const iframe = document.createElement("iframe");
+        iframe.src = button.getAttribute("data-trailer-embed") || "";
+        iframe.title = button.getAttribute("data-trailer-title") || "Trailer";
+        iframe.className = "w-full h-full";
+        iframe.allow =
+          "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+        iframe.allowFullscreen = true;
+
+        container.appendChild(iframe);
+        wrapper.appendChild(container);
+        if (labelEl) {
+          labelEl.textContent = button.getAttribute("data-label-hide") || "Ocultar Tráiler";
+        }
+      });
+    }
+  </script>
 </Layout>

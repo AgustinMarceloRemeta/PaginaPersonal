@@ -9,6 +9,7 @@ interface Game {
   platformKey: TranslationKey;
   linkLabelKey: TranslationKey;
   link: string;
+  trailerEmbed?: string;
 }
 
 const games: Game[] = [
@@ -19,6 +20,7 @@ const games: Game[] = [
     platformKey: "games.platform.meta",
     linkLabelKey: "games.store.meta",
     link: "https://www.meta.com/experiences/goblin-invasion/6355186887870473/",
+    trailerEmbed: "https://www.youtube.com/embed/JuvcKyDDaFg",
   },
   {
     title: "ColorSeek",
@@ -35,6 +37,7 @@ const games: Game[] = [
     platformKey: "games.platform.itch",
     linkLabelKey: "games.store.itch",
     link: "https://phyglitch.itch.io/rootaccess",
+    trailerEmbed: "https://www.youtube.com/embed/uUHCwVDwG8k",
   },
 ];
 
@@ -46,6 +49,7 @@ const academicGames: Game[] = [
     platformKey: "games.platform.itch",
     linkLabelKey: "games.store.itch",
     link: "https://crunched-studios.itch.io/pesadilla-eterna",
+    trailerEmbed: "https://www.youtube.com/embed/20Ac4VOowoo",
   },
   {
     title: "Betweenplanets",
@@ -54,6 +58,7 @@ const academicGames: Game[] = [
     platformKey: "games.platform.itch",
     linkLabelKey: "games.store.itch",
     link: "https://remetaagustin.itch.io/betweenplanets",
+    trailerEmbed: "https://www.youtube.com/embed/ZC7w_yZE4f8",
   },
   {
     title: "Space Game",
@@ -62,6 +67,7 @@ const academicGames: Game[] = [
     platformKey: "games.platform.itch",
     linkLabelKey: "games.store.itch",
     link: "https://remetaagustin.itch.io/space-game",
+    trailerEmbed: "https://www.youtube.com/embed/59xw0x7V2F0",
   },
   {
     title: "Rocket Attack",
@@ -70,6 +76,7 @@ const academicGames: Game[] = [
     platformKey: "games.platform.itch",
     linkLabelKey: "games.store.itch",
     link: "https://remetaagustin.itch.io/rocket-attack",
+    trailerEmbed: "https://www.youtube.com/embed/akBXGWZ5ZWg?start=2",
   },
   {
     title: "Little Tour",
@@ -78,6 +85,7 @@ const academicGames: Game[] = [
     platformKey: "games.platform.itch",
     linkLabelKey: "games.store.itch",
     link: "https://remetaagustin.itch.io/little-tour",
+    trailerEmbed: "https://www.youtube.com/embed/WaIqUWfAZ-c",
   },
   {
     title: "Travesía Ratonezca",
@@ -86,6 +94,7 @@ const academicGames: Game[] = [
     platformKey: "games.platform.itch",
     linkLabelKey: "games.store.itch",
     link: "https://remetaagustin.itch.io/travesa-ratonezca",
+    trailerEmbed: "https://www.youtube.com/embed/Xt3Lrw85cek",
   },
 ];
 
@@ -100,6 +109,7 @@ const featuredGame = {
   studioLink: "https://crestfallen.games/",
   studioLabelKey: "featured.studio.link",
   studioLogo: "/images/cf.png",
+  trailerEmbed: "https://www.youtube.com/embed/ThF7vbtJzyQ",
 } as const;
 
 export { games, academicGames, featuredGame };
