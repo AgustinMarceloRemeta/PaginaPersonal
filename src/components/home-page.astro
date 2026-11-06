@@ -25,6 +25,15 @@ const t = useTranslations(lang);
       <section
         class="relative min-h-[calc(100vh-4rem)] flex items-center justify-center text-center px-4 py-8 overflow-hidden"
       >
+        <img
+          src={withBase("/images/Fondo.jpg")}
+          alt=""
+          aria-hidden="true"
+          class="absolute inset-0 w-full h-full object-cover object-center pointer-events-none select-none"
+        />
+        <div
+          class="absolute inset-0 bg-gradient-to-b from-background/20 via-transparent to-background pointer-events-none"
+        />
         <div class="relative z-10 flex flex-col items-center gap-6 max-w-2xl">
           <img
             src={withBase("/images/profile.jpg")}
