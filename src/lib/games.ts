@@ -10,6 +10,7 @@ interface Game {
   linkLabelKey: TranslationKey;
   link: string;
   trailerEmbed?: string;
+  checkAvailability?: boolean;
 }
 
 const games: Game[] = [
@@ -29,6 +30,7 @@ const games: Game[] = [
     platformKey: "games.platform.play",
     linkLabelKey: "games.store.play",
     link: "https://play.google.com/store/apps/details?id=com.Remarkade.ColorSeek",
+    checkAvailability: true,
   },
   {
     title: "Root Access",

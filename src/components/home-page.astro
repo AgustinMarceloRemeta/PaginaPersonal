@@ -16,6 +16,33 @@ interface Props {
 
 const { lang } = Astro.props;
 const t = useTranslations(lang);
+
+async function isStorePageLive(url: string, expectedTitle: string): Promise<boolean> {
+  try {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 2500);
+    const response = await fetch(url, {
+      method: "GET",
+      signal: controller.signal,
+      headers: { "User-Agent": "Mozilla/5.0" },
+    });
+    clearTimeout(timeout);
+    if (!response.ok) return false;
+    const html = await response.text();
+    return (
+      html.includes(expectedTitle) &&
+      !html.includes("We're sorry, the requested URL was not found")
+    );
+  } catch {
+    return false;
+  }
+}
+
+const gamesAvailability = await Promise.all(
+  games.map((game) =>
+    game.checkAvailability ? isStorePageLive(game.link, game.title) : Promise.resolve(true)
+  )
+);
 ---
 
 <Layout title="Agustín Remeta" lang={lang}>
@@ -123,7 +150,14 @@ const t = useTranslations(lang);
             <h2 class="text-4xl font-bold tracking-tight">{t("games.title")}</h2>
           </div>
           <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-8 items-start">
-            {games.map((game) => <GameCard game={game} lang={lang} client:load />)}
+            {games.map((game, index) => (
+              <GameCard
+                game={game}
+                lang={lang}
+                initialAvailable={gamesAvailability[index]}
+                client:load
+              />
+            ))}
           </div>
         </div>
       </section>

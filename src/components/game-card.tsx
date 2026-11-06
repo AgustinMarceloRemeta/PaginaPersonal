@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ChevronUp, Play } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
@@ -12,11 +12,56 @@ interface GameCardProps {
   game: Game;
   lang: keyof typeof ui;
   compact?: boolean;
+  initialAvailable?: boolean;
 }
 
-export function GameCard({ game, lang, compact = false }: GameCardProps) {
+export function GameCard({
+  game,
+  lang,
+  compact = false,
+  initialAvailable = !game.checkAvailability,
+}: GameCardProps) {
   const [showTrailer, setShowTrailer] = useState(false);
+  const [isAvailable, setIsAvailable] = useState(initialAvailable);
   const t = useTranslations(lang);
+
+  useEffect(() => {
+    if (!game.checkAvailability) return;
+
+    let cancelled = false;
+
+    async function verifyStoreStatus() {
+      try {
+        const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(game.link)}`;
+        const response = await fetch(proxyUrl);
+        if (!response.ok) return;
+        const data = await response.json();
+        const httpCode = data?.status?.http_code;
+        const contents = typeof data?.contents === "string" ? data.contents : "";
+        const isLive =
+          httpCode === 200 &&
+          contents.includes(game.title) &&
+          !contents.includes("We're sorry, the requested URL was not found");
+        if (!cancelled) {
+          setIsAvailable(isLive);
+        }
+      } catch {
+        if (!cancelled) {
+          setIsAvailable(false);
+        }
+      }
+    }
+
+    verifyStoreStatus();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [game.checkAvailability, game.link, game.title]);
+
+  if (!isAvailable) {
+    return null;
+  }
 
   if (compact) {
     return (
