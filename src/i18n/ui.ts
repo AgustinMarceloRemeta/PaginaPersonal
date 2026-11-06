@@ -20,6 +20,7 @@ export const ui = {
     "featured.title": "Juego Destacado",
     "featured.taer.title": "The Tavern at the End of the Road",
     "featured.taer.description": "The Tavern at the End of the Road es un Deckbuilder en 3D, donde un tabernero narra nuestra historia. Tiene un sistema de combate donde cada golpe cuenta y las decisiones narrativas construyen nuestro mazo.",
+    "featured.studio.link": "Visitar Crestfallen Game Studio",
 
     "games.title": "Otros Juegos",
     "games.goblin.description": "Goblin Invasion es un juego de realidad virtual basado en la fantasía de ser un hechicero. Con la innovadora mecánica de dibujar y lanzar hechizos, el jugador defiende su aldea contra las fuerzas del mal.",
@@ -30,9 +31,11 @@ export const ui = {
     "games.store.meta": "Ver en Meta Store",
     "games.store.play": "Ver en Play Store",
     "games.store.itch": "Ver en Itch.io",
+    "games.store.steam": "Ver en Steam",
     "games.platform.meta": "Meta Store",
     "games.platform.play": "Play Store",
     "games.platform.itch": "Itch.io",
+    "games.platform.steam": "Steam",
 
     "footer.title": "Agustín Remeta",
     "footer.description": "Desarrollador de videojuegos y cofundador de Crestfallen Game Studio.",
@@ -55,6 +58,7 @@ export const ui = {
     "featured.title": "Featured Game",
     "featured.taer.title": "The Tavern at the End of the Road",
     "featured.taer.description": "The Tavern at the End of the Road is a 3D deckbuilder where a tavern keeper narrates our story. It features a combat system where every hit counts and narrative choices build our deck.",
+    "featured.studio.link": "Visit Crestfallen Game Studio",
 
     "games.title": "Other Games",
     "games.goblin.description": "Goblin Invasion is a virtual reality game based on the fantasy of being a sorcerer. With an innovative mechanic of drawing and casting spells, the player defends their village against the forces of evil.",
@@ -65,9 +69,11 @@ export const ui = {
     "games.store.meta": "View on Meta Store",
     "games.store.play": "View on Play Store",
     "games.store.itch": "View on Itch.io",
+    "games.store.steam": "View on Steam",
     "games.platform.meta": "Meta Store",
     "games.platform.play": "Play Store",
     "games.platform.itch": "Itch.io",
+    "games.platform.steam": "Steam",
 
     "footer.title": "Agustín Remeta",
     "footer.description": "Game developer and co-founder of Crestfallen Game Studio.",

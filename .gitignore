@@ -19,6 +19,7 @@ Desktop.ini
 *.suo
 *.sln
 graphify-out/
+.graphify/
 .graphify*
 Graphify/
 .wrangler/

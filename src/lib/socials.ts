@@ -23,11 +23,6 @@ const socials: Social[] = [
     icon: SiYoutube,
     href: "https://www.youtube.com/channel/UC9gOnJ9HYaq9sGageFuj-IQ",
   },
-  {
-    name: "Crestfallen",
-    icon: SiInstagram,
-    href: "https://www.instagram.com/crestfallengamestudio/",
-  },
 ];
 
 const contactEmail = "agustinmarceloremeta@gmail.com";

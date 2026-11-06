@@ -59,8 +59,12 @@ const featuredGame = {
   titleKey: "featured.taer.title",
   descriptionKey: "featured.taer.description",
   image: "/images/games/taer.jpg",
-  link: "https://crestfallen-game-studio.itch.io/taer",
-  itchEmbed: "https://itch.io/embed/2932579",
+  link: "https://store.steampowered.com/app/3933280/The_Tavern_at_the_End_of_the_Road/",
+  linkLabelKey: "games.store.steam",
+  steamLogo: "/images/socials/steam-logo-alta.webp",
+  studioLink: "https://crestfallen.games/",
+  studioLabelKey: "featured.studio.link",
+  studioLogo: "/images/cf.png",
 } as const;
 
 export { games, featuredGame };

@@ -11,7 +11,7 @@ export function Footer({ lang }: { lang: keyof typeof ui }) {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-card py-12 z-10">
+    <footer className="bg-card border-t border-primary/25 py-12 z-10">
       <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-12 2xl:px-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
@@ -22,12 +22,12 @@ export function Footer({ lang }: { lang: keyof typeof ui }) {
             <h4 className="font-bold mb-4">{t("footer.links")}</h4>
             <ul className="space-y-2">
               <li>
-                <a href={`${homePrefix}#featured`} className="text-muted-foreground hover:text-primary transition-colors">
+                <a href={`${homePrefix}#featured`} className="text-muted-foreground hover:text-foreground hover:underline decoration-primary underline-offset-4 transition-colors">
                   {t("featured.title")}
                 </a>
               </li>
               <li>
-                <a href={`${homePrefix}#games`} className="text-muted-foreground hover:text-primary transition-colors">
+                <a href={`${homePrefix}#games`} className="text-muted-foreground hover:text-foreground hover:underline decoration-primary underline-offset-4 transition-colors">
                   {t("games.title")}
                 </a>
               </li>
@@ -39,7 +39,7 @@ export function Footer({ lang }: { lang: keyof typeof ui }) {
               <li>
                 <a
                   href={`mailto:${contactEmail}`}
-                  className="text-muted-foreground hover:text-primary transition-colors break-all"
+                  className="text-muted-foreground hover:text-foreground hover:underline decoration-primary underline-offset-4 transition-colors break-all"
                 >
                   {contactEmail}
                 </a>
@@ -65,7 +65,7 @@ export function Footer({ lang }: { lang: keyof typeof ui }) {
             </div>
           </div>
         </div>
-        <Separator className="my-8" />
+        <Separator className="my-8 bg-primary/30" />
         <div className="text-center text-sm text-muted-foreground">
           © {currentYear} {t("footer.copyright")}
         </div>

@@ -1,9 +1,10 @@
 import { Badge } from "@/components/ui/badge";
+import { buttonVariants } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import type { ui } from "@/i18n/ui";
 import { useTranslations } from "@/i18n/utils";
 import type { Game } from "@/lib/games";
-import { withBase } from "@/lib/utils";
+import { cn, withBase } from "@/lib/utils";
 
 interface GameCardProps {
   game: Game;
@@ -14,7 +15,7 @@ export function GameCard({ game, lang }: GameCardProps) {
   const t = useTranslations(lang);
 
   return (
-    <Card className="overflow-hidden transition-all hover:scale-[1.02] flex flex-col">
+    <Card className="overflow-hidden transition-all hover:scale-[1.02] flex flex-col border-primary/30 hover:border-primary/70 hover:shadow-[0_0_25px_-5px_hsl(var(--primary)/0.25)]">
       <div className="aspect-video relative">
         <img
           src={withBase(game.image)}
@@ -35,7 +36,7 @@ export function GameCard({ game, lang }: GameCardProps) {
             href={game.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-primary hover:underline"
+            className={cn(buttonVariants({ variant: "default", size: "sm" }))}
           >
             {t(game.linkLabelKey)} →
           </a>
